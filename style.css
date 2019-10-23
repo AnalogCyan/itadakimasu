@@ -9,7 +9,7 @@ body {
 }
 
 .github-corner {
-  z-index: 1 !important;
+  z-index: 1;
 }
 
 header {
@@ -45,19 +45,19 @@ header h1 {
 
 @media screen and (max-width: 500px) {
   header h1 {
-    font-size-adjust: 0.75 !important;
+    font-size-adjust: 0.75;
   }
 }
 
 @media screen and (max-width: 330px) {
   header h1 {
-    font-size-adjust: 0.60 !important;
+    font-size-adjust: 0.60;
   }
 }
 
 @media screen and (max-width: 265px) {
   header h1 {
-    font-size-adjust: 0.50 !important;
+    font-size-adjust: 0.50;
   }
 }
 
