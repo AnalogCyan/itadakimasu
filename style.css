@@ -14,6 +14,7 @@ body {
 
 .github-corner a:link,
 .github-corner a:visited,
+.github-corner a:focus,
 .github-corner a:hover,
 .github-corner a:active {
   color: none;
@@ -113,6 +114,10 @@ footer {
   grid-row: 3;
 }
 
+a {
+  outline: 0;
+}
+
 a:link,
 a:visited {
   color: #1a8cff;
@@ -120,6 +125,7 @@ a:visited {
   text-decoration: none;
 }
 
+a:focus,
 a:hover,
 a:active {
   color: #50b347;
