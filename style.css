@@ -118,8 +118,7 @@ footer {
 }
 
 a,
-a::-moz-focus-inner,
-button::-moz-focus-inner {
+input::-moz-focus-inner {
   outline: 0;
 }
 
