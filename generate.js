@@ -3,7 +3,7 @@ var foods = [
 ];
 
 var button = [
-  "Generate", "Generate Recipe", "Generate Password", "Generate Recipe Password", "Another!", "Not your cup of tea?"
+  "Generate", "Generate Recipe", "Generate Password", "Generate Recipe Password", "Generate Random Password", "Generate Random Recipe", "Another!", "Not your cup of tea?", "Still hungry?"
 ];
 
 var placeholders = [
