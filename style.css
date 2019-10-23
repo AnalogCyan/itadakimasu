@@ -106,8 +106,11 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:focus,
+button:hover,
+button:active {
   background-color: #50b347;
+  outline: 0;
 }
 
 footer {
