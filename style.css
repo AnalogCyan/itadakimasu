@@ -12,6 +12,13 @@ body {
   z-index: 1;
 }
 
+.github-corner a:link,
+.github-corner a:visited,
+.github-corner a:hover,
+.github-corner a:active {
+  color: none;
+}
+
 header {
   grid-row: 1;
   position: relative;
