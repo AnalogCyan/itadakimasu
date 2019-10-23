@@ -117,7 +117,9 @@ footer {
   grid-row: 3;
 }
 
-a {
+a,
+a::-moz-focus-inner,
+button::-moz-focus-inner {
   outline: 0;
 }
 
