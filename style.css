@@ -117,11 +117,6 @@ footer {
   grid-row: 3;
 }
 
-a,
-input::-moz-focus-inner {
-  outline: 0;
-}
-
 a:link,
 a:visited {
   color: #1a8cff;
