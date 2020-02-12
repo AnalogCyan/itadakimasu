@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/png"
-    href="https://raw.githubusercontent.com/AnalogCyan/itadakimasu/master/icon.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AnalogCyan/itadakimasu/master/icon.png">
   <title>Itadakimasu</title>
+  <link rel='manifest' href='/manifest.json'>
   <!--Import main stylsheet-->
   <link rel="stylesheet" href="style.css" />
   <!--Import main fonts-->
@@ -92,6 +92,28 @@
     <p>Contribute to the food list on <a href="https://github.com/AnalogCyan/itadakimasu">GitHub</a></p>
     <p>Find me on Twitter <a href="https://www.twitter.com/AnalogCyan/">@AnalogCyan</a></p>
   </footer>
+
+  <script>
+    // This is the "Offline copy of pages" service worker
+
+    // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+    // Check compatibility for the browser we're running this in
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("[PWA Builder] active service worker found, no need to register");
+      } else {
+        // Register the service worker
+        navigator.serviceWorker
+          .register("pwabuilder-sw.js", {
+            scope: "./"
+          })
+          .then(function (reg) {
+            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+  </script>
 </body>
 
 </html>

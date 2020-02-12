@@ -48,7 +48,14 @@ h1 {
 
 header h1 {
   position: relative;
-  font-size-adjust: 1;
+  font-size: 60px;
+}
+
+header p {
+  margin: 0;
+  position: relative;
+  font-size: 22px;
+  padding: 0px 0px 0px 0px;
 }
 
 @media screen and (max-width: 500px) {
@@ -61,27 +68,24 @@ header h1 {
   }
 
   header h1 {
-    font-size-adjust: 0.80;
+    font-size: 50px
   }
 }
 
 @media screen and (max-width: 330px) {
   header h1 {
-    font-size-adjust: 0.65;
+    font-size: 40px;
+  }
+
+  header p {
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 265px) {
   header h1 {
-    font-size-adjust: 0.55;
+    font-size: 30px;
   }
-}
-
-header p {
-  margin: 0;
-  position: relative;
-  font-size-adjust: 0.75;
-  padding: 0px 0px 0px 0px;
 }
 
 main {
