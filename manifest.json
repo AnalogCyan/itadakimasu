@@ -6,7 +6,7 @@
   "display": "standalone",
   "start_url": "https://itadakimasu.thayn.me/",
   "short_name": "Itadakimasu",
-  "theme_color": "transparent",
+  "theme_color": "#1a8cff",
   "description": "",
   "orientation": "portrait",
   "background_color": "transparent",
