@@ -7,5 +7,5 @@
 </p>
 
 <p align="center">
-This was made for fun, and is not a serious endeavor.<br>Please don't use this as your actual password generator, as it likely won't be very secure.<br>Also no promises on the quality or safety of recipies it generates.
+This was made for fun, and is not a serious endeavor.<br>Please don't use this as your actual password generator, as it likely won't be very secure.<br>Also no promises on the quality or safety of recipes it generates.
 </p>
