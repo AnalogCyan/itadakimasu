@@ -1,4 +1,4 @@
-<h3 align="center"><img src="./icon.png" alt="icon" height="200px"></h3>
+<h3 align="center"><img src="./Assets/icon.png" alt="icon" height="200px"></h3>
 <p align="center">A random recipe password generator.<br>Inspired by <a href="https://randombutmemorable.simplecast.com/episodes/nice-security-hollywood-terror-VPL7w0_R">Random but Memorable</a></p>
 
 <p align="center">
