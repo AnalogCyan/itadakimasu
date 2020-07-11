@@ -1,4 +1,0 @@
-[[headers]]
-  for = "/*.json"
-  [headers.values]
-    mimeType="application/manifest+json"
