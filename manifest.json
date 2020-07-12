@@ -15,10 +15,16 @@
   "icons": [
     {
       "src": "/Assets/maskable_icon.png",
-      "sizes": "852x852",
+      "sizes": "774x774",
       "type": "image/png",
       "purpose": "maskable"
     },
+    {
+      "src": "/Assets/icon.png",
+      "sizes": "750x750",
+      "type": "image/png",
+      "purpose": "any"
+    }
     {
       "src": "/Images/d3cbea7f-d15b-d341-4c27-14663db43eb8.webPlatform.png",
       "sizes": "44x44",
