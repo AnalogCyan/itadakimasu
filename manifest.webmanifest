@@ -31,16 +31,6 @@
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "/Assets/0481fa40-a732-3adb-2db6-192a57b14539.webPlatform.png",
-      "sizes": "1240x600",
-      "type": "image/png"
-    },
-    {
-      "src": "/Assets/a2e119ac-28af-0e06-efe6-5f114881220f.webPlatform.png",
-      "sizes": "620x300",
-      "type": "image/png"
     }
   ],
   "screenshots": [
