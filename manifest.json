@@ -6,7 +6,7 @@
   "scope": "/",
   "display": "standalone",
   "start_url": "https://itadakimasu.thayn.me/",
-  "background_color": "#7ebfa5",
+  "background_color": "#000000",
   "theme_color": "#1a8cff",
   "description": "A random recipe password generator, inspired by the Random but Memorable podcast from 1Password.",
   "orientation": "portrait",
