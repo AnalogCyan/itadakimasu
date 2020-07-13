@@ -6,7 +6,7 @@
   "scope": "/",
   "display": "standalone",
   "start_url": "https://itadakimasu.thayn.me/",
-  "background_color": "transparent",
+  "background_color": "#7ebfa5",
   "theme_color": "#1a8cff",
   "description": "A random recipe password generator, inspired by the Random but Memorable podcast from 1Password.",
   "orientation": "portrait",
@@ -15,7 +15,7 @@
   "icons": [
     {
       "src": "/Assets/maskable_icon.png",
-      "sizes": "774x774",
+      "sizes": "852x852",
       "type": "image/png",
       "purpose": "maskable"
     },
@@ -26,98 +26,19 @@
       "purpose": "any"
     },
     {
-      "src": "/Images/d3cbea7f-d15b-d341-4c27-14663db43eb8.webPlatform.png",
-      "sizes": "44x44",
-      "type": "image/png"
+      "src": "/Assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/Images/59b70cc8-1f5c-5c62-c0a2-aa2b30422b7e.webPlatform.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/0481fa40-a732-3adb-2db6-192a57b14539.webPlatform.png",
+      "src": "/Assets/0481fa40-a732-3adb-2db6-192a57b14539.webPlatform.png",
       "sizes": "1240x600",
       "type": "image/png"
     },
     {
-      "src": "/Images/f4575f9f-07a1-73e3-6232-c0f5e7cd7553.webPlatform.png",
-      "sizes": "300x300",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/79224a61-028d-a15a-0802-ca4af89b9de7.webPlatform.png",
-      "sizes": "150x150",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/a4676968-5a01-c7ab-c814-dc4b23d94805.webPlatform.png",
-      "sizes": "88x88",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/f0f915da-2d19-36ed-589c-3fc4597a77e4.webPlatform.png",
-      "sizes": "24x24",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/82cba696-7228-7f56-f465-787a6dc857cc.webPlatform.png",
-      "sizes": "50x50",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/a2e119ac-28af-0e06-efe6-5f114881220f.webPlatform.png",
+      "src": "/Assets/a2e119ac-28af-0e06-efe6-5f114881220f.webPlatform.png",
       "sizes": "620x300",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/b7fef78a-63e6-4df5-4352-d8b534b600bb.webPlatform.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/0ef29156-4b1f-d8c7-2d05-abd87f61e387.webPlatform.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/cb1a619b-29c2-b9dc-6e42-5c260fcc130d.webPlatform.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/9ffb06a1-d092-4ccc-f2af-b2b48a69070e.webPlatform.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/9b972046-7529-c3c2-384c-c16d1c656749.webPlatform.png",
-      "sizes": "36x36",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/dabb4f93-0e75-7ef0-2b66-4747971cb470.webPlatform.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/ea025157-0bf6-bc5a-8510-bb62e23aac67.webPlatform.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/d54a51d8-587f-5175-10e5-9acea2311c0d.webPlatform.png",
-      "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/21ae5e58-dd59-e10a-0a90-92bbb677e250.webPlatform.png",
-      "sizes": "120x120",
-      "type": "image/png"
-    },
-    {
-      "src": "/Images/af51dcd1-c835-cbd2-fd34-0eb7836634fd.webPlatform.png",
-      "sizes": "76x76",
       "type": "image/png"
     }
   ],
