@@ -1,5 +1,5 @@
 body {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
   background-color: #000000;
   color: #ffffff;
   display: grid;
@@ -68,7 +68,7 @@ header p {
   }
 
   header h1 {
-    font-size: 50px
+    font-size: 50px;
   }
 }
 
@@ -94,15 +94,14 @@ main {
 
 #pass {
   font-size: 25px;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "Share Tech Mono", monospace;
 }
 
 button {
   background-color: #1a8cff;
   color: white;
-  border: none;
+  /*border: none;*/
   border-radius: 50px 50px 50px 50px;
-  padding: 0px 32px;
   text-align: center;
   display: inline-block;
   font-size: 12px;
@@ -115,6 +114,17 @@ button:hover,
 button:active {
   background-color: #50b347;
   outline: 0;
+}
+
+#gen-btn {
+  padding: 0px 6em 0px 3em;
+  border: none;
+}
+
+#options {
+  width: 5em;
+  margin-left: -5em;
+  border: 5px solid black;
 }
 
 footer {
