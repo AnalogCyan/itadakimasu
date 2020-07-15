@@ -100,7 +100,7 @@ main {
 button {
   background-color: #1a8cff;
   color: white;
-  /*border: none;*/
+  outline: none;
   border-radius: 50px 50px 50px 50px;
   text-align: center;
   display: inline-block;
