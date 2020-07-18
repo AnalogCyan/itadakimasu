@@ -224,7 +224,7 @@ function starter() {
     placeholders[Math.floor(Math.random() * placeholders.length)];
 }
 
-function pass() {
+function pass(btn) {
   var slider = 4;
   var slider = document.getElementById("myRange");
   var randFoods = [];
@@ -235,31 +235,37 @@ function pass() {
     randFoods.push("-");
   }
 
-  for (var i = 0; i < ((slider.value*2)-1); i++) {
+  for (var i = 0; i < slider.value * 2 - 1; i++) {
     generated += randFoods[i];
   }
 
   document.getElementById("pass").innerHTML = generated;
 
-  document.getElementById("gen").innerHTML =
-    button[Math.floor(Math.random() * button.length)];
+  if (btn) {
+    document.getElementById("gen").innerHTML =
+      button[Math.floor(Math.random() * button.length)];
+  }
 }
 
 function menu() {
-  //document.getElementById("controls").style.display = "none";
-  document.getElementById("menu").style.display = "block";
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
 }
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value; // Display the default slider value
 
-function slide(){
+function slide() {
   range_weight_disp.value = myRange.value;
   pass();
 }
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
   output.innerHTML = this.value;
-  pass();
+  pass(false);
 };
