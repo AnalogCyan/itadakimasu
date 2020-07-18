@@ -220,6 +220,9 @@ var button = [
 var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 
 function starter() {
+  if (window.innerWidth <= 350) {
+    document.getElementById("gen").innerHTML = "Generate";
+  }
   document.getElementById("pass").innerHTML =
     placeholders[Math.floor(Math.random() * placeholders.length)];
 }
@@ -242,8 +245,9 @@ function pass(btn) {
   document.getElementById("pass").innerHTML = generated;
 
   if (btn) {
-    document.getElementById("gen").innerHTML =
-      button[Math.floor(Math.random() * button.length)];
+    if (window.innerWidth > 350)
+      document.getElementById("gen").innerHTML =
+        button[Math.floor(Math.random() * button.length)];
   }
 }
 
