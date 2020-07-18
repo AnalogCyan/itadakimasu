@@ -97,10 +97,19 @@
         <div id="gen">Generate Recipe Password</div>
       </h2>
     </button>
-    <button type="button" id="options">
-      <h2><i class="fas fa-ellipsis-h"></i></h2>
+    <button type="button" id="options" onclick="menu()">
+      <h2>
+        <i class="fas fa-ellipsis-h"></i>
+      </h2>
     </button>
   </div>
+
+  <div class="slidecontainer" id="menu">
+    <input type="range" min="3" max="10" value="4" class="slider" id="myRange" oninput="slide()">
+    <br>
+    <output  id="range_weight_disp"></output>
+  </div>
+
   </main>
 
   <footer>

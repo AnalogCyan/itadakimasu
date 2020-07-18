@@ -225,18 +225,41 @@ function starter() {
 }
 
 function pass() {
-  var randFood1 = foods[Math.floor(Math.random() * foods.length)];
-  var randFood2 = foods[Math.floor(Math.random() * foods.length)];
-  var randFood3 = foods[Math.floor(Math.random() * foods.length)];
-  var randFood4 = foods[Math.floor(Math.random() * foods.length)];
-  var seperator = "-";
-  document.getElementById("pass").innerHTML = randFood1.concat(
-    seperator.concat(
-      randFood2.concat(
-        seperator.concat(randFood3.concat(seperator.concat(randFood4)))
-      )
-    )
-  );
+  var slider = 4;
+  var slider = document.getElementById("myRange");
+  var randFoods = [];
+  var generated = "";
+
+  for (var i = 0; i < slider.value; i++) {
+    randFoods.push(foods[Math.floor(Math.random() * foods.length)]);
+    randFoods.push("-");
+  }
+
+  for (var i = 0; i < ((slider.value*2)-1); i++) {
+    generated += randFoods[i];
+  }
+
+  document.getElementById("pass").innerHTML = generated;
+
   document.getElementById("gen").innerHTML =
     button[Math.floor(Math.random() * button.length)];
 }
+
+function menu() {
+  //document.getElementById("controls").style.display = "none";
+  document.getElementById("menu").style.display = "block";
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+function slide(){
+  range_weight_disp.value = myRange.value;
+  pass();
+}
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+  output.innerHTML = this.value;
+  pass();
+};
