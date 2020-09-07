@@ -110,7 +110,13 @@ button {
   cursor: pointer;
 }
 
-button:hover,
+@media (hover: hover) {
+  button:hover {
+    background-color: #50b347;
+    outline: 0;
+  }
+}
+
 button:active {
   background-color: #50b347;
   outline: 0;
