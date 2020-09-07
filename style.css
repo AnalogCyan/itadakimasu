@@ -108,6 +108,7 @@ button {
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {
