@@ -1,11 +1,11 @@
 body {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
   background-color: #000000;
   color: #ffffff;
   display: grid;
   text-align: center;
   margin: 0;
-  grid-template-rows: 325px 40vh auto;
+  grid-template-rows: 325px auto auto;
 }
 
 .github-corner {
@@ -68,11 +68,11 @@ header p {
   }
 
   header h1 {
-    font-size: 50px
+    font-size: 50px;
   }
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 350px) {
   header h1 {
     font-size: 40px;
   }
@@ -90,31 +90,52 @@ header p {
 
 main {
   grid-row: 2;
+  padding-bottom: 10vh;
 }
 
 #pass {
   font-size: 25px;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "Share Tech Mono", monospace;
 }
 
 button {
   background-color: #1a8cff;
   color: white;
-  border: none;
+  outline: none;
   border-radius: 50px 50px 50px 50px;
-  padding: 0px 32px;
   text-align: center;
   display: inline-block;
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-button:focus,
-button:hover,
+@media (hover: hover) {
+  button:hover {
+    background-color: #50b347;
+    outline: 0;
+  }
+}
+
 button:active {
   background-color: #50b347;
   outline: 0;
+}
+
+#gen-btn {
+  padding: 0px 6em 0px 3em;
+  border: none;
+}
+
+#options {
+  width: 5em;
+  margin-left: -5em;
+  border: 4px solid black;
+}
+
+#menu {
+  display: none;
 }
 
 footer {
@@ -156,3 +177,41 @@ a:active {
   }
 }
 */
+
+#menu {
+  margin-top: 5px;
+  max-width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 26em;
+  height: 3em;
+  border-radius: 32px;
+  background: #1a8cff;
+  outline: none;
+}
+
+.slider::-moz-range-track {
+  height: 50px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #50b347;
+  cursor: pointer;
+  border: 4px solid black;
+}
+
+.slider::-moz-range-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #50b347;
+  cursor: pointer;
+  border: 4px solid black;
+}
