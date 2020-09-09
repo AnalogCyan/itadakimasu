@@ -221,9 +221,9 @@ var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 
 function starter() {
   if (window.innerWidth <= 350) {
-    document.getElementById("gen").innerHTML = "Generate";
+    document.getElementById("gen").textContent = "Generate";
   }
-  document.getElementById("pass").innerHTML =
+  document.getElementById("pass").textContent =
     placeholders[Math.floor(Math.random() * placeholders.length)];
 }
 
@@ -242,11 +242,11 @@ function pass(btn) {
     generated += randFoods[i];
   }
 
-  document.getElementById("pass").innerHTML = generated;
+  document.getElementById("pass").textContent = generated;
 
   if (btn) {
     if (window.innerWidth > 350)
-      document.getElementById("gen").innerHTML =
+      document.getElementById("gen").textContent =
         button[Math.floor(Math.random() * button.length)];
   }
 }
@@ -262,7 +262,7 @@ function menu() {
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
+output.textContent = slider.value; // Display the default slider value
 
 function slide() {
   range_weight_disp.value = myRange.value;
@@ -270,6 +270,6 @@ function slide() {
 }
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
-  output.innerHTML = this.value;
+  output.textContent = this.value;
   pass(false);
 };
