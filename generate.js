@@ -16,6 +16,7 @@ var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 async function starter() {
   const getBtn = document.getElementById("gen-btn");
   const opts = document.getElementById("options");
+  const axios = window.axios;
   try {
     getBtn.setAttribute("disabled", "disabled");
     opts.setAttribute("disabled", "disabled");
@@ -24,6 +25,9 @@ async function starter() {
     }
     document.getElementById("pass").textContent =
       placeholders[Math.floor(Math.random() * placeholders.length)];
+    if (!axios) {
+      throw new Error("Axios is missing!!");
+    }
     const { data } = await axios.get("foods.json");
     foods = data;
   } catch (err) {
