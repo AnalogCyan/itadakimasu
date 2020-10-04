@@ -1,4 +1,5 @@
-var foods = [];
+var ingredients = [];
+var recipes = [];
 var button = [
   "Generate",
   "Generate Recipe",
@@ -14,9 +15,18 @@ var button = [
 var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 
 async function starter() {
+  const axios = window.axios;
+  function getIngredients () {
+    return axios.get("foods.json");
+    }
+    
+  function getRecipes () {
+      return axios.get("dishes.json");
+    }
+
   const getBtn = document.getElementById("gen-btn");
   const opts = document.getElementById("options");
-  const axios = window.axios;
+  
   try {
     getBtn.setAttribute("disabled", "disabled");
     opts.setAttribute("disabled", "disabled");
@@ -28,8 +38,10 @@ async function starter() {
     if (!axios) {
       throw new Error("Axios is missing!!");
     }
-    const { data } = await axios.get("foods.json");
-    foods = data;
+    Promise.all([getIngredients(),getRecipes()]).then(function (results) {
+      ingredients = results[0].data;
+      recipes = results[1].data;
+    });
   } catch (err) {
     console.error(
       `Error :: Couldn't download the dictionary :: ${err.message}`
@@ -46,11 +58,13 @@ function pass(btn) {
   var slider = document.getElementById("myRange");
   var randFoods = [];
   var generated = "";
-
-  for (var i = 0; i < slider.value; i++) {
-    randFoods.push(foods[Math.floor(Math.random() * foods.length)]);
+  //add the ingredients first
+  for (var i = 0; i < slider.value-1; i++) {
+    randFoods.push(ingredients[Math.floor(Math.random() * ingredients.length)]);
     randFoods.push("-");
   }
+  //append a dish type
+    randFoods.push(recipes[Math.floor(Math.random() * recipes.length)]);
 
   for (var i = 0; i < slider.value * 2 - 1; i++) {
     generated += randFoods[i];
