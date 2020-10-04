@@ -14,18 +14,19 @@ var button = [
 
 var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 
-function getIngredients () {
-return axios.get("foods.json");
-}
-
-function getRecipes () {
-  return axios.get("dishes.json");
-}
-
 async function starter() {
+  const axios = window.axios;
+  function getIngredients () {
+    return axios.get("foods.json");
+    }
+    
+  function getRecipes () {
+      return axios.get("dishes.json");
+    }
+
   const getBtn = document.getElementById("gen-btn");
   const opts = document.getElementById("options");
-  const axios = window.axios;
+  
   try {
     getBtn.setAttribute("disabled", "disabled");
     opts.setAttribute("disabled", "disabled");
