@@ -44,19 +44,5 @@
       "sizes": "750x1334",
       "type": "image/png"
     }
-  ],
-  "shortcuts": [
-    {
-      "name": "Copy To Clipboard",
-      "description": "Copy a new password to the clipboard",
-      "url": "/copy",
-      "icons": [
-        {
-          "src": "Assets/copy.svg",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        }
-      ]
-    }
   ]
 }

@@ -54,23 +54,17 @@ async function starter() {
 }
 
 function copyStringToClipboard(str) {
-  // Create new element
-  var el = document.createElement("textarea");
-  // Set value (string to be copied)
-  el.value = str;
-  // Set non-editable to avoid focus and move outside of view
-  el.setAttribute("readonly", "");
-  el.style = { position: "absolute", left: "-9999px" };
-  document.body.appendChild(el);
-  // Select text inside element
-  el.select();
-  // Copy text to clipboard
-  document.execCommand("copy");
-  // Remove temporary element
-  document.body.removeChild(el);
+  navigator.clipboard.writeText(str).then(
+    function () {
+      console.log("Async: Copying to clipboard was successful!");
+    },
+    function (err) {
+      console.error("Async: Could not copy text: ", err);
+    }
+  );
 }
 
-function pass(btn, copy) {
+function pass(btn) {
   var slider = 4;
   var slider = document.getElementById("myRange");
   var randFoods = [];
@@ -93,10 +87,6 @@ function pass(btn, copy) {
     if (window.innerWidth > 350)
       document.getElementById("gen").textContent =
         button[Math.floor(Math.random() * button.length)];
-  }
-
-  if (copy) {
-    copyStringToClipboard(generated);
   }
 }
 
