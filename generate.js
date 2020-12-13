@@ -14,12 +14,30 @@ function starter() {
   document.getElementById("pass").innerHTML = placeholders[Math.floor(Math.random() * (placeholders.length))];
 }
 
-function pass() {
+function pass(i) {
   var randFood1 = foods[Math.floor(Math.random() * (foods.length))];
   var randFood2 = foods[Math.floor(Math.random() * (foods.length))];
   var randFood3 = foods[Math.floor(Math.random() * (foods.length))];
   var randFood4 = foods[Math.floor(Math.random() * (foods.length))];
   var seperator = "-";
+  if(i){
+    return randFood1.concat(seperator.concat(randFood2.concat(seperator.concat(randFood3.concat(seperator.concat(randFood4))))));
+  }
   document.getElementById("pass").innerHTML = randFood1.concat(seperator.concat(randFood2.concat(seperator.concat(randFood3.concat(seperator.concat(randFood4))))));
   document.getElementById("gen").innerHTML = button[Math.floor(Math.random() * (button.length))];
+}
+
+function copy() {
+    /* Get the text field */
+    var copyText = pass(true);
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
 }
