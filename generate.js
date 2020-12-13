@@ -1,43 +1,118 @@
-var foods = [
-  "alfalfa", "shawarma", "gin", "rum", "tea", "tomago", "beetroot", "tunip", "cardamom", "fried", "boiled", "baked", "steamed", "broiled", "sake", "tequila", "blueberry", "biryani", "clover", "apricot", "pea", "bean", "lentil", "lupin", "mesquite", "carob", "soybean", "peanut", "tamarind", "acorn", "almond", "beech", "candlenut", "cashew", "chestnut", "hazelnut", "pecan", "macadamia", "pistachio", "walnut", "asparagus", "apple", "avacado", "squash", "arugala", "artichoke", "applesauce", "noodle", "cantelope", "tuna", "juice", "sushi", "bruscetta", "bacon", "bagel", "bbq", "bison", "barley", "beer", "bisque", "bluefish", "bread", "broccoli", "buritto", "babaganoosh", "cabbage", "cake", "carrots", "celery", "cheese", "chicken", "catfish", "chips", "chocolate", "chowder", "clam", "coffee", "cookie", "corn", "cupcake", "crab", "curry", "cereal", "chimichanga", "date", "dip", "duck", "dumpling", "donut", "egg", "enchilada", "eggroll", "muffin", "edamame", "eel", "fajita", "falafel", "fish", "fondu", "toast", "garlic", "ginger", "gnocchi", "goose", "granola", "grape", "guacamole", "gumbo", "grits", "cracker", "ham", "halibut", "hamburger", "cheeseburger", "honey", "sugar", "roll", "hummus", "ice", "cream", "stew", "jambalaya", "jelly", "jam", "jerky", "jalapeño", "kale", "ketchup", "kiwi", "kingfish", "lobster", "lamb", "linguine", "lasagna", "meatball", "moose", "milk", "milkshake", "ostrich", "pizza", "pepperoni", "pancakes", "quesadilla", "quiche", "reuben", "spinach", "spaghetti", "venison", "waffle", "wine", "yogurt", "ziti", "zucchini", "water", "vodka", "cocktail", "rhubarb", "martini", "watermelon", "melon", "strawberry", "raspberry", "banana", "cherry", "lemon", "plum", "pumpkin", "potato", "eggplant", "onion", "mushroom", "sausage", "steak", "porridge", "rice", "seafood", "cod", "herring", "salmon", "maize", "wheat", "flour", "musturd", "crisp", "syrup", "candy", "dessert", "kebab", "kombucha", "pie", "salad", "letuce", "sandwich", "sauce", "soy", "snack", "raisin", "soup", "cider", "soda", "pop", "alcohol", "lemonade", "marshmallow"
-];
-
+var ingredients = [];
+var recipes = [];
 var button = [
-  "Generate", "Generate Recipe", "Generate Password", "Generate Recipe Password", "Generate Random Password", "Generate Random Recipe", "Another!", "Not your cup of tea?", "Still hungry?"
+  "Generate",
+  "Generate Recipe",
+  "Generate Password",
+  "Generate Recipe Password",
+  "Generate Random Password",
+  "Generate Random Recipe",
+  "Another!",
+  "Not your cup of tea?",
+  "Still hungry?",
 ];
 
-var placeholders = [
-  "correct-horse-battery-staple", "water-rhubarb-martini"
-];
+var placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 
-function starter() {
-  document.getElementById("pass").innerHTML = placeholders[Math.floor(Math.random() * (placeholders.length))];
-}
-
-function pass(i) {
-  var randFood1 = foods[Math.floor(Math.random() * (foods.length))];
-  var randFood2 = foods[Math.floor(Math.random() * (foods.length))];
-  var randFood3 = foods[Math.floor(Math.random() * (foods.length))];
-  var randFood4 = foods[Math.floor(Math.random() * (foods.length))];
-  var seperator = "-";
-  if(i){
-    return randFood1.concat(seperator.concat(randFood2.concat(seperator.concat(randFood3.concat(seperator.concat(randFood4))))));
+async function starter() {
+  const axios = window.axios;
+  function getIngredients() {
+    return axios.get("foods.json");
   }
-  document.getElementById("pass").innerHTML = randFood1.concat(seperator.concat(randFood2.concat(seperator.concat(randFood3.concat(seperator.concat(randFood4))))));
-  document.getElementById("gen").innerHTML = button[Math.floor(Math.random() * (button.length))];
+
+  function getRecipes() {
+    return axios.get("dishes.json");
+  }
+
+  const getBtn = document.getElementById("gen-btn");
+  const opts = document.getElementById("options");
+
+  try {
+    getBtn.setAttribute("disabled", "disabled");
+    opts.setAttribute("disabled", "disabled");
+    if (window.innerWidth <= 350) {
+      document.getElementById("gen").textContent = "Generate";
+    }
+    document.getElementById("pass").textContent =
+      placeholders[Math.floor(Math.random() * placeholders.length)];
+    if (!axios) {
+      throw new Error("Axios is missing!!");
+    }
+    Promise.all([getIngredients(), getRecipes()]).then(function (results) {
+      ingredients = results[0].data;
+      recipes = results[1].data;
+    });
+  } catch (err) {
+    console.error(
+      `Error :: Couldn't download the dictionary :: ${err.message}`
+    );
+    window.alert("Error: Couldn't download the dictionary!!");
+  } finally {
+    getBtn.removeAttribute("disabled");
+    opts.removeAttribute("disabled");
+  }
 }
+
+function pass(btn) {
+  var slider = 4;
+  var slider = document.getElementById("myRange");
+  var randFoods = [];
+  var generated = "";
+  //add the ingredients first
+  for (var i = 0; i < slider.value - 1; i++) {
+    randFoods.push(ingredients[Math.floor(Math.random() * ingredients.length)]);
+    randFoods.push("-");
+  }
+  //append a dish type
+  randFoods.push(recipes[Math.floor(Math.random() * recipes.length)]);
+
+  for (var i = 0; i < slider.value * 2 - 1; i++) {
+    generated += randFoods[i];
+  }
+
+  document.getElementById("pass").textContent = generated;
+
+  if (btn) {
+    if (window.innerWidth > 350)
+      document.getElementById("gen").textContent =
+        button[Math.floor(Math.random() * button.length)];
+  }
+}
+
+function menu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.textContent = slider.value; // Display the default slider value
+
+function slide() {
+  range_weight_disp.value = myRange.value;
+  pass();
+}
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+  output.textContent = this.value;
+  pass(false);
+};
 
 function copy() {
-    /* Get the text field */
-    var copyText = pass(true);
+  /* Get the text field */
+  var copyText = pass();
 
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
 
-    /* Alert the copied text */
-    alert("Copied the text: " + copyText.value);
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
 }
