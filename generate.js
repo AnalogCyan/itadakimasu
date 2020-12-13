@@ -53,7 +53,24 @@ async function starter() {
   }
 }
 
-function pass(btn) {
+function copyStringToClipboard(str) {
+  // Create new element
+  var el = document.createElement("textarea");
+  // Set value (string to be copied)
+  el.value = str;
+  // Set non-editable to avoid focus and move outside of view
+  el.setAttribute("readonly", "");
+  el.style = { position: "absolute", left: "-9999px" };
+  document.body.appendChild(el);
+  // Select text inside element
+  el.select();
+  // Copy text to clipboard
+  document.execCommand("copy");
+  // Remove temporary element
+  document.body.removeChild(el);
+}
+
+function pass(btn, copy) {
   var slider = 4;
   var slider = document.getElementById("myRange");
   var randFoods = [];
@@ -76,6 +93,10 @@ function pass(btn) {
     if (window.innerWidth > 350)
       document.getElementById("gen").textContent =
         button[Math.floor(Math.random() * button.length)];
+  }
+
+  if (copy) {
+    copyStringToClipboard(generated);
   }
 }
 
@@ -101,18 +122,3 @@ slider.oninput = function () {
   output.textContent = this.value;
   pass(false);
 };
-
-function copy() {
-  /* Get the text field */
-  var copyText = pass();
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
