@@ -35,13 +35,13 @@
   ],
   "screenshots": [
     {
-      "src": "Assets/screenshot1.png",
-      "sizes": "1280x800",
+      "src": "Assets/screenshot.png",
+      "sizes": "2960x5846",
       "type": "image/png"
     },
     {
-      "src": "Assets/screenshot2.png",
-      "sizes": "750x1334",
+      "src": "Assets/screenshot_alt.jpeg",
+      "sizes": "2960x5846",
       "type": "image/png"
     }
   ]
