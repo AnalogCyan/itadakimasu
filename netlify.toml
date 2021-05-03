@@ -3,3 +3,8 @@
   [headers.values]
     mimeType = "application/manifest+json"
     Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+        X-Frame-Options = "sameorigin"
