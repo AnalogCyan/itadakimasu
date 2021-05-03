@@ -100,7 +100,7 @@ function menu() {
 }
 
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+var output = document.getElementById("range_weight_disp");
 output.textContent = slider.value; // Display the default slider value
 
 function slide() {
