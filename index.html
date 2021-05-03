@@ -36,15 +36,16 @@
       rel="stylesheet"
     />
     <!--Inport Scripts-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" async></script>
     <script
       src="https://kit.fontawesome.com/3e2f93b581.js"
       crossorigin="anonymous"
+      async
     ></script>
-    <script src="generate.js"></script>
-    <script src="manup.min.js"></script>
-    <script type="module" src="pwabuilder-sw-register.js"></script>
-    <script type="module">
+    <script src="generate.js" async></script>
+    <script src="manup.min.js" async></script>
+    <script type="module" src="pwabuilder-sw-register.js" async></script>
+    <script type="module" async>
       // detect iOS Safari
       if ("standalone" in navigator && !navigator.standalone) {
         import("https://unpkg.com/pwacompat");
@@ -52,12 +53,12 @@
     </script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-Frame-Options" content="sameorigin" />
   </head>
 
   <body onload="starter()">
     <a
       target="_blank"
+      rel="noopener"
       href="https://github.com/AnalogCyan/itadakimasu"
       class="github-corner"
       aria-label="View source on GitHub"
@@ -139,7 +140,12 @@
             <div id="gen">Generate Recipe Password</div>
           </h2>
         </button>
-        <button type="button" id="options" onclick="menu()">
+        <button
+          type="button"
+          id="options"
+          aria-label="Options Menu"
+          onclick="menu()"
+        >
           <h2>
             <i class="fas fa-ellipsis-h"></i>
           </h2>
@@ -167,6 +173,7 @@
         <a
           id="pod"
           target="_blank"
+          rel="noopener"
           href="https://randombutmemorable.simplecast.com/episodes/nice-security-hollywood-terror-VPL7w0_R"
           >Nice Security Hollywood Terror</a
         >
@@ -174,13 +181,19 @@
       </p>
       <p>
         Contribute to the food list on
-        <a target="_blank" href="https://github.com/AnalogCyan/itadakimasu"
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://github.com/AnalogCyan/itadakimasu"
           >GitHub</a
         >
       </p>
       <p>
         Find me on Twitter
-        <a target="_blank" href="https://www.twitter.com/AnalogCyan/"
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.twitter.com/AnalogCyan/"
           >@AnalogCyan</a
         >
       </p>
