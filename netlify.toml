@@ -26,3 +26,9 @@
   to = "https://itadakimasu.app/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://www.itadakimasu.app/*"
+  to = "https://itadakimasu.app/:splat"
+  status = 301
+  force = true
