@@ -4,6 +4,11 @@
     mimeType = "application/manifest+json"
     Content-Type = "application/manifest+json"
 
+[[headers]]
+  for = "/*"
+    [headers.values]
+        X-Frame-Options = "sameorigin"
+
 [[redirects]]
   from = "https://itadakimasu.netlify.app/*"
   to = "https://itadakimasu.app/:splat"
