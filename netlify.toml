@@ -8,3 +8,15 @@
   for = "/*"
     [headers.values]
         X-Frame-Options = "sameorigin"
+
+[[redirects]]
+  from = "https://itadakimasu.netlify.app/*"
+  to = "https://itadakimasu.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://itadakimasu.thayn.me/*"
+  to = "https://itadakimasu.app/:splat"
+  status = 301
+  force = true
