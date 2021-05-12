@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.itadakimasu.twa",
+      "sha256_cert_fingerprints": [
+        "13:FE:B1:11:C5:84:9E:5D:69:13:87:72:B1:84:D6:CB:45:34:F1:A1:4F:D6:BB:DF:3B:37:C6:8D:A0:76:D1:7F"
+      ]
+    }
+  }
+]
