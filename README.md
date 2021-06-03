@@ -9,7 +9,7 @@ Available as an installable PWA in your browser or on the Google Play Store.
 
 Microsoft Store listing coming soon™.
 
-![](./Assets/pwa-badge.png) ![](./Assets/google-play-badge.png)
+[![](./Assets/pwa-badge.png)](https://itadakimasu.app) [![](./Assets/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.itadakimasu.twa)
 
 ## Disclaimer
 
