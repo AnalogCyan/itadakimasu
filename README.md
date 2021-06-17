@@ -5,11 +5,9 @@
 
 A random recipe password generator inspired by [Random but Memorable](https://randombutmemorable.simplecast.com/episodes/nice-security-hollywood-terror-VPL7w0_R).
 
-Available as an installable PWA in your browser or on the Google Play Store.
+Available as an installable PWA in your browser, on the Google Play Store, and Microsoft Store.
 
-Microsoft Store listing coming soon™.
-
-[![](./Assets/pwa-badge.png)](https://itadakimasu.app) [![](./Assets/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.itadakimasu.twa)
+[![](./Assets/pwa-badge.png)](https://itadakimasu.app) [![](./Assets/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.itadakimasu.twa) [![](./Assets/microsoft-store-badge.png)](https://www.microsoft.com/store/apps/9P3LJK22JPCH?cid=storebadge&ocid=badge)
 
 ## Disclaimer
 
