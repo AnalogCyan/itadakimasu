@@ -3,6 +3,7 @@
 <a href="https://app.netlify.com/sites/itadakimasu/deploys"><img src="https://api.netlify.com/api/v1/badges/c7cc711d-2e4f-47e9-817e-005e91c19417/deploy-status"/></a>
 [![CodeQL](https://github.com/AnalogCyan/itadakimasu/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AnalogCyan/itadakimasu/actions/workflows/codeql-analysis.yml)
 <a href="https://www.codacy.com/gh/AnalogCyan/itadakimasu/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AnalogCyan/itadakimasu&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/e2074797518945bd9524cc444c402b28"/></a>
+[![DeepSource](https://deepsource.io/gh/AnalogCyan/itadakimasu.svg/?label=active+issues&show_trend=true&token=RioSb7HNxccrE4xMqQO7Jp_i)](https://deepsource.io/gh/AnalogCyan/itadakimasu/?ref=repository-badge)
 
 A random recipe password generator inspired by [Random but Memorable](https://randombutmemorable.simplecast.com/episodes/nice-security-hollywood-terror-VPL7w0_R).
 
