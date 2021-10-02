@@ -96,6 +96,7 @@ main {
 #pass {
   font-size: 25px;
   font-family: "Share Tech Mono", monospace;
+  user-select: all;
 }
 
 button {
