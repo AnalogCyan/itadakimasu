@@ -96,6 +96,9 @@ main {
 #pass {
   font-size: 25px;
   font-family: "Share Tech Mono", monospace;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
   user-select: all;
 }
 
