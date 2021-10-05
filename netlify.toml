@@ -32,3 +32,15 @@
   to = "https://itadakimasu.app/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://install.itadakimasu.app/"
+  to = "https://github.com/AnalogCyan/itadakimasu#readme"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://install.itadakimasu.app/windows/"
+  to = "ms-windows-store://pdp/?ProductId=9p3ljk22jpch&mode=mini"
+  status = 301
+  force = true
