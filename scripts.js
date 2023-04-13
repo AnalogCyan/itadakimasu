@@ -7,7 +7,7 @@ const genButton = document.getElementById("genButton");
 const fullRecipeButton = document.getElementById("fullRecipeButton");
 const slider = document.getElementById("slider");
 const sliderValue = document.getElementById("sliderValue");
-const url = "https://api.itadakimasu.app/";
+const url = "https://api.itadakimasu.app";
 
 function gen(len) {
   var randFoods = [];
