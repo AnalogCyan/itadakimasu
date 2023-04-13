@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["*.itadakimasu.app"],
+    "responseHeader": ["Content-Type", "x-goog-resumable"],
+    "method": ["GET", "HEAD", "DELETE", "PUT", "POST", "OPTIONS"],
+    "maxAgeSeconds": 3600
+  }
+]

@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #00b1fc;
+  --secondary-color: #1a8cff;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --header-height: 325px;
+}
+
+body {
+  font-family: "Fredoka One", cursive;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: grid;
+  text-align: center;
+  margin: 0;
+  grid-template-rows: var(--header-height) auto auto;
+}
+
+header {
+  grid-row: 1;
+  position: relative;
+  height: calc(var(--header-height) - 25px);
+  overflow: hidden;
+}
+
+.header_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: skewY(4deg);
+  transform-origin: top right;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 70px;
+}
+
+header h1 {
+  position: relative;
+  font-size: 60px;
+}
+
+header p {
+  margin: 0;
+  position: relative;
+  font-size: 22px;
+}
+
+main {
+  grid-row: 2;
+  padding-bottom: 10vh;
+}
+
+#pass {
+  font-size: 1.5625rem;
+  font-family: "Share Tech Mono", monospace;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 0.75rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 0.1rem 2rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#generate {
+  transition: all 1s ease-in-out;
+}
+
+#optsButton,
+#fullRecipeButton {
+  aspect-ratio: 1/1;
+  padding: 0rem 1rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 26em;
+  height: 1em;
+  border-radius: 32px;
+  background: #1a8cff;
+  outline: none;
+}
+
+.slider::-moz-range-track {
+  height: 50px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: whitesmoke;
+  cursor: pointer;
+  border: 4px solid black;
+}
+
+button:hover {
+  background-color: #50b347;
+  outline: 0;
+}
+
+button:active {
+  background-color: #50b347;
+  outline: 0;
+}
+
+a:link,
+a:visited {
+  color: #1a8cff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: #50b347;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+footer {
+  grid-row: 3;
+}
+
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 3rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cycleColors {
+  0% {
+    fill: red;
+  }
+  33% {
+    fill: green;
+  }
+  66% {
+    fill: blue;
+  }
+  100% {
+    fill: red;
+  }
+}
+
+.spinner svg {
+  height: 5rem;
+  width: 5rem;
+  margin-right: 1rem;
+  animation: spin 2s linear infinite, cycleColors 3s linear infinite;
+}
