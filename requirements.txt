@@ -1,6 +1,7 @@
 Flask>=2.0.0
 Flask-Limiter>=2.0.0
 Flask-Talisman>=1.0.0
+flask-cors>=3.0.10
 google-cloud-storage>=1.43.0
 google-cloud-secret-manager>=1.1.0
 markdown2>=2.4.0

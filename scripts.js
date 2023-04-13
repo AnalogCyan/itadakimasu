@@ -7,7 +7,7 @@ const genButton = document.getElementById("genButton");
 const fullRecipeButton = document.getElementById("fullRecipeButton");
 const slider = document.getElementById("slider");
 const sliderValue = document.getElementById("sliderValue");
-const url = "https://itadakimasu.app/gen";
+const url = "https://api.itadakimasu.app/";
 
 function gen(len) {
   var randFoods = [];
@@ -49,7 +49,9 @@ async function fetchData() {
     try {
       const ingredients = document.getElementById("pass").innerText;
       const encodedIngredients = encodeURIComponent(ingredients);
-      const response = await fetch(url + "?ingredients=" + encodedIngredients);
+      const response = await fetch(
+        url + "/gen?ingredients=" + encodedIngredients
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -57,7 +59,7 @@ async function fetchData() {
 
       const data = await response.json();
       console.log("Data fetched successfully:", data);
-      window.open(data.url, "_blank");
+      window.open(url + data.url, "_blank");
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {

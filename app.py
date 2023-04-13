@@ -10,6 +10,7 @@ from flask import (
 )
 from flask_limiter import Limiter
 from flask_talisman import Talisman
+from flask_cors import CORS
 from google.cloud import storage, secretmanager
 import json
 import markdown2
@@ -22,13 +23,25 @@ import uuid
 
 
 app = Flask(__name__)
-openai.api_key = "op://Private/OpenAI API/credential"
+client = secretmanager.SecretManagerServiceClient()
+name = "projects/{project_id}/secrets/{secret_name}/versions/{version_id}".format(
+    project_id="466666823263",
+    secret_name="OpenAI",
+    version_id="1"
+)
+response = client.access_secret_version(name=name)
+secret_value = response.payload.data.decode('UTF-8')
+openai.api_key = secret_value
 app.config["SESSION_COOKIE_SECURE"] = True
 app.config["REMEMBER_COOKIE_SECURE"] = True
+ALLOWED_ORIGINS = ["https://itadakimasu.app",
+                   "https://api.itadakimasu.app", "http://127.0.0.1", "http://localhost", "http://127.0.0.1:3000"]
 BUCKET_NAME = "itadakimasu-api.appspot.com"
 OUTPUT_FOLDER = ""
 storage_client = storage.Client()
 bucket = storage_client.get_bucket(BUCKET_NAME)
+cors = CORS(app, resources={r"/*": {"origins": ALLOWED_ORIGINS}})
+
 
 limiter = Limiter(app, default_limits=["5 per minute"])
 Talisman(app)
@@ -82,7 +95,7 @@ def create_page():
     ingredients = request.args.get("ingredients", "")
     if not is_valid_format(ingredients):
         abort(400, description="Invalid input format")
-    markdown_content = generate(ingredients)
+    markdown_content = generate(ingredients).encode("utf-8")
     html_content = markdown2.markdown(markdown_content)
     unique_id = str(uuid.uuid4())
     save_output(html_content, unique_id)

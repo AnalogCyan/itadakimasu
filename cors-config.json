@@ -1,6 +1,11 @@
 [
   {
-    "origin": ["*.itadakimasu.app"],
+    "origin": [
+      "*.itadakimasu.app",
+      "127.0.0.1",
+      "localhost",
+      "http://127.0.0.1:3000"
+    ],
     "responseHeader": ["Content-Type", "x-goog-resumable"],
     "method": ["GET", "HEAD", "DELETE", "PUT", "POST", "OPTIONS"],
     "maxAgeSeconds": 3600
