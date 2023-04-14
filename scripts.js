@@ -42,17 +42,6 @@ genButton.addEventListener("click", () => {
   pass.innerText = gen(slider.value);
 });
 
-function openInNewTab(url) {
-  const link = document.createElement("a");
-  link.href = url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.style.display = "none";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
 fullRecipeButton.addEventListener("click", async () => {
   document.getElementById("spinner").style.display = "flex";
   try {
@@ -68,7 +57,7 @@ fullRecipeButton.addEventListener("click", async () => {
 
     const data = await response.json();
     console.log("Data fetched successfully:", data);
-    openInNewTab(url + data.url);
+    window.location = url + data.url;
   } catch (error) {
     console.error("Error fetching data:", error);
   } finally {
