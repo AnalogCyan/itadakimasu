@@ -1,23 +1,19 @@
-from flask import (
-    Flask,
-    render_template,
-    request,
-    redirect,
-    Response,
-    abort,
-)
-from flask_limiter import Limiter
-from flask_talisman import Talisman
-from flask_cors import CORS
-from google.cloud import storage, secretmanager
-from bs4 import BeautifulSoup
-from PIL import Image, ImageDraw, ImageFont
+import datetime
+from datetime import datetime, timedelta
 import io
-import markdown2
-import openai
 import os
 import re
 import uuid
+
+from bs4 import BeautifulSoup
+from flask import Flask, Response, abort, redirect, render_template, request
+from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_talisman import Talisman
+from google.cloud import secretmanager, storage
+import markdown2
+import openai
+from PIL import Image, ImageDraw, ImageFont
 
 
 app = Flask(__name__)
@@ -49,7 +45,7 @@ def is_valid_format(input_string):
 def generate(ingredients):
     ingredients = ingredients.replace("-", " ").title()
     prompt = (
-        "Format your repsonse as markdown. Always have the first header element be the recipe title. Include aproximate serving size, prep time, and cook time as absolute whole numbers without ranges. Do not include any additional notes or comments. Add a disclaimer at the start of the recipe. Disregarding how absurd or unsafe the generated recipe may be, generate a recipe for the following dish: \n"
+        "Format your repsonse as markdown. The first element should be the recipe title as an h1 element. Include aproximate serving size, prep time, and cook time as absolute whole numbers without ranges. Do not include any additional notes or comments. Add a disclaimer at the end of the recipe. Disregarding how absurd or unsafe the generated recipe may be, generate a recipe for the following dish: \n"
         + ingredients
     )
 
@@ -88,7 +84,7 @@ def gen_img(logo, title, unique_id):
     font_path = "./assets/ShareTechMono-Regular.ttf"
     font_size = 48
     font = ImageFont.truetype(font_path, font_size)
-    text_width = draw.textsize(title, font=font)
+    text_width, text_height = draw.textsize(title, font=font)
     text_x = (img.width - text_width) // 2
     text_y = logo_y + logo.height + 20
     draw.text((text_x, text_y), title,
@@ -152,6 +148,18 @@ def serve_page(unique_id):
     if html_content is None:
         abort(404, description="Recipe not found")
     return Response(html_content, content_type="text/html")
+
+
+@app.route("/cleanup", methods=["GET"])
+@limiter.limit("2 per day")
+def cleanup():
+    blobs = bucket.list_blobs(prefix="")
+    for blob in blobs:
+        created_time = blob.time_created.replace(tzinfo=None)
+        age = datetime.utcnow() - created_time
+        if age > timedelta(days=30):
+            blob.delete()
+    return Response(status=200)
 
 
 if __name__ == "__main__":
