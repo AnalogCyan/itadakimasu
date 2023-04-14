@@ -1,5 +1,5 @@
-var foods = [];
-var dishes = [];
+let foods = [];
+let dishes = [];
 const button = ["Generate"];
 const placeholders = ["correct-horse-battery-staple", "water-rhubarb-martini"];
 const pass = document.getElementById("pass");
@@ -10,17 +10,17 @@ const sliderValue = document.getElementById("sliderValue");
 const url = "https://api.itadakimasu.app";
 
 function gen(len) {
-  var randFoods = [];
-  var generated = "";
+  let randFoods = [];
+  let generated = "";
   //add the ingredients first
-  for (var i = 0; i < len - 1; i++) {
+  for (let i = 0; i < len - 1; i++) {
     randFoods.push(foods[Math.floor(Math.random() * foods.length)]);
     randFoods.push("-");
   }
   //append a dish type
   randFoods.push(dishes[Math.floor(Math.random() * dishes.length)]);
 
-  for (var i = 0; i < len * 2 - 1; i++) {
+  for (let i = 0; i < len * 2 - 1; i++) {
     generated += randFoods[i];
   }
 
