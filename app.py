@@ -4,6 +4,7 @@ import io
 import os
 import re
 import uuid
+import requests
 
 from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, redirect, render_template, request
@@ -11,7 +12,6 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_talisman import Talisman
 from google.cloud import secretmanager, storage
-from google_fonts_downloader import GoogleFontsDownloader
 import markdown2
 import openai
 from PIL import Image, ImageDraw, ImageFont
@@ -84,9 +84,12 @@ def gen_img(logo, title, unique_id):
     text_color = (0, 0, 0)
     text_x = logo.width + 100
     text_y = 50
-    downloader = GoogleFontsDownloader()
+    font_url = "https://fonts.google.com/download?family=Share%20Tech%20Mono"
     font_family = "Share Tech Mono"
-    font_path = downloader.download_font(font_family)
+    reqest = requests.get(font_url)
+    with open(f"./assets/{font_family}.ttf", "wb") as file:
+        file.write(response.content)
+    font_path = f"./assets/{font_family}.ttf"
     font_size = 48
     font = ImageFont.truetype(font_path, font_size)
     text_width, text_height = draw.textsize(title, font=font)
