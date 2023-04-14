@@ -98,7 +98,7 @@ def gen_img(logo, title, unique_id):
     font_path = "./assets/ShareTechMono-Regular.ttf"
     font_size = 48
     font = ImageFont.truetype(font_path, font_size)
-    text_width, text_height = draw.textsize(title, font=font)
+    text_width = draw.textsize(title, font=font)
     text_x = (img.width - text_width) // 2
     text_y = logo_y + logo.height + 20
     draw.text((text_x, text_y), title,
