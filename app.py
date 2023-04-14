@@ -136,7 +136,7 @@ def create_page():
     ingredients = request.args.get("ingredients", "")
     if not is_valid_format(ingredients):
         abort(400, description="Invalid input format")
-    blob = bucket.blob(f"{ingredients}.png")
+    blob = bucket.blob(f"{ingredients}.html")
     if blob.exists():
         blob.make_public()
         return {"url": f"/recipe/{ingredients}"}
