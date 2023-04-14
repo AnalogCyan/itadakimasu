@@ -22,11 +22,7 @@ import uuid
 
 app = Flask(__name__)
 client = secretmanager.SecretManagerServiceClient()
-name = "projects/{project_id}/secrets/{secret_name}/versions/{version_id}".format(
-    project_id="466666823263",
-    secret_name="OpenAI",
-    version_id="1"
-)
+name = f"projects/466666823263/secrets/OpenAI/versions/1"
 response = client.access_secret_version(name=name)
 secret_value = response.payload.data.decode('UTF-8')
 openai.api_key = secret_value
