@@ -64,6 +64,7 @@ def save_output(html_content, unique_id):
     file_path = f"{unique_id}.html"
     blob = bucket.blob(file_path)
     blob.upload_from_string(html_content, content_type="text/html")
+    blob.make_public()
     return file_path
 
 
