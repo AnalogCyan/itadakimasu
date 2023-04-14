@@ -42,32 +42,6 @@ genButton.addEventListener("click", () => {
   pass.innerText = gen(slider.value);
 });
 
-async function fetchData() {
-  document.getElementById("spinner").style.display = "flex";
-
-  requestAnimationFrame(async () => {
-    try {
-      const ingredients = document.getElementById("pass").innerText;
-      const encodedIngredients = encodeURIComponent(ingredients);
-      const response = await fetch(
-        url + "/gen?ingredients=" + encodedIngredients
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log("Data fetched successfully:", data);
-      openInNewTab(url + data.url);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      document.getElementById("spinner").style.display = "none";
-    }
-  });
-}
-
 function openInNewTab(url) {
   const link = document.createElement("a");
   link.href = url;
@@ -80,7 +54,26 @@ function openInNewTab(url) {
 }
 
 fullRecipeButton.addEventListener("click", async () => {
-  fetchData();
+  document.getElementById("spinner").style.display = "flex";
+  try {
+    const ingredients = document.getElementById("pass").innerText;
+    const encodedIngredients = encodeURIComponent(ingredients);
+    const response = await fetch(
+      url + "/gen?ingredients=" + encodedIngredients
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Data fetched successfully:", data);
+    openInNewTab(url + data.url);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  } finally {
+    document.getElementById("spinner").style.display = "none";
+  }
 });
 
 slider.addEventListener("input", () => {
