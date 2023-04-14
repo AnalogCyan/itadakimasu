@@ -137,7 +137,8 @@ def create_page():
         abort(400, description="Invalid input format")
     markdown_content = generate(ingredients).encode("utf-8")
     html_content = markdown2.markdown(markdown_content)
-    unique_id = str(uuid.uuid4())
+    # unique_id = str(uuid.uuid4())
+    unique_id = ingredients.lower().replace(" ", "-")
     save_output(html_content, unique_id)
     return {"url": f"/recipe/{unique_id}"}
 
