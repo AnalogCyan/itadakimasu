@@ -59,13 +59,24 @@ async function fetchData() {
 
       const data = await response.json();
       console.log("Data fetched successfully:", data);
-      window.open(url + data.url, "_blank");
+      openInNewTab(url + data.url);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
       document.getElementById("spinner").style.display = "none";
     }
   });
+}
+
+function openInNewTab(url) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 fullRecipeButton.addEventListener("click", async () => {
