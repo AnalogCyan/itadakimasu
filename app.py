@@ -72,6 +72,7 @@ def gen_img(logo, title, unique_id):
     if blob.exists():
         blob.make_public()
         return blob.public_url
+    title = title.lower().replace(" ", "-")
     logo = Image.open(logo)
     img = Image.new('RGB', (1200, 630), color=(126, 191, 165))
     logo_x = (img.width - logo.width) // 2
