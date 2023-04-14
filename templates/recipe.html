@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="{{ og_title }}" />
+    <meta property="og:description" content="{{ og_description }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+    <meta property="og:url" content="{{ og_url }}" />
+
+    <meta name="twitter:title" content="{{ twitter_title }}" />
+    <meta name="twitter:description" content="{{ twitter_description }}" />
+    <meta name="twitter:image" content="{{ twitter_image }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% block content %} {{ body_content|safe }} {% endblock %}
+  </body>
+</html>

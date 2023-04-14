@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags -->
     <meta charset="utf-8" />
-    <title>Itadakimasu</title>
-    <meta name="theme-color" content="#1a8cff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8cff" />
+    <meta
+      name="description"
+      content="A random recipe password generator, inspired by the 1Password podcast."
+    />
+    <meta property="og:url" content="https://itadakimasu.app/" />
+    <meta property="og:title" content="Itadakimasu" />
+    <meta property="og:image" content="./assets/maskable_icon.png" />
+    <meta
+      property="og:description"
+      content="A random recipe password generator, inspired by the 1Password podcast."
+    />
+
+    <!-- Title -->
+    <title>Itadakimasu</title>
+
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
       rel="stylesheet"
@@ -13,13 +36,28 @@
       href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Scripts -->
     <script src="scripts.js" defer></script>
+    <script src="manup.min.js"></script>
+    <script type="module" src="pwabuilder-sw-register.js"></script>
+    <script type="module">
+      // detect iOS Safari
+      if ("standalone" in navigator && !navigator.standalone) {
+        import("https://unpkg.com/pwacompat");
+      }
+    </script>
   </head>
+
   <body>
     <header>
       <div class="header_bg"></div>
