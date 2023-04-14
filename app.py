@@ -135,10 +135,14 @@ def create_page():
     ingredients = request.args.get("ingredients", "")
     if not is_valid_format(ingredients):
         abort(400, description="Invalid input format")
+    blob = bucket.blob(f"{ingredients}.png")
+    if blob.exists():
+        blob.make_public()
+        return {"url": f"/recipe/{ingredients}"}
     markdown_content = generate(ingredients).encode("utf-8")
     html_content = markdown2.markdown(markdown_content)
     # unique_id = str(uuid.uuid4())
-    unique_id = ingredients.lower().replace(" ", "-")
+    unique_id = ingredients
     save_output(html_content, unique_id)
     return {"url": f"/recipe/{unique_id}"}
 
