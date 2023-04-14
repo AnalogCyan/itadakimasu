@@ -11,6 +11,7 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_talisman import Talisman
 from google.cloud import secretmanager, storage
+from google_fonts_downloader import GoogleFontsDownloader
 import markdown2
 import openai
 from PIL import Image, ImageDraw, ImageFont
@@ -83,7 +84,9 @@ def gen_img(logo, title, unique_id):
     text_color = (0, 0, 0)
     text_x = logo.width + 100
     text_y = 50
-    font_path = "./assets/ShareTechMono-Regular.ttf"
+    downloader = GoogleFontsDownloader()
+    font_family = "Share Tech Mono"
+    font_path = downloader.download_font(font_family)
     font_size = 48
     font = ImageFont.truetype(font_path, font_size)
     text_width, text_height = draw.textsize(title, font=font)
