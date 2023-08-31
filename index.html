@@ -54,12 +54,14 @@
         navigator.serviceWorker.register("sw.js");
       }
     </script>
-
     <script type="module">
       // detect iOS Safari
       if ("standalone" in navigator && !navigator.standalone) {
         import("https://unpkg.com/pwacompat");
       }
+    </script>
+    <script>
+      navigator.serviceWorker.register("sw.js");
     </script>
   </head>
 
