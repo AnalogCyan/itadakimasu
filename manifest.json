@@ -1,0 +1,36 @@
+{
+  "background_color": "#ffffff",
+  "description": "A random recipe password generator, inspired by the 1Password podcast.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Itadakimasu",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Itadakimasu",
+  "start_url": "/",
+  "theme_color": "#1a8cff",
+  "categories": ["entertainment", "security", "utilities"],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "./assets/icon.png",
+      "type": "image/png",
+      "sizes": "750x750"
+    },
+    {
+      "src": "./assets/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "./assets/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "852x852"
+    },
+    {
+      "src": "./assets/icon.png",
+      "type": "image/x-icon"
+    }
+  ],
+  "lang": "en"
+}
