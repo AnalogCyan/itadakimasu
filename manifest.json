@@ -3,6 +3,7 @@
   "description": "A random recipe password generator, inspired by the 1Password podcast.",
   "dir": "ltr",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
   "name": "Itadakimasu",
   "orientation": "portrait",
   "scope": "/",
