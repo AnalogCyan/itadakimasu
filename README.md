@@ -1,16 +1,14 @@
 # 🔑 Itadakimasu - Recipe Password Generator
 
+> [!WARNING]  
+> **Important Notice: Domain Ownership Change**  
+> I no longer own the `itadakimasu.app` domain. It appears to have been purchased by someone else during the time I did not own it. As a result, the `itadakimasu.app` domain is **no longer the trusted or canonical domain for this app**. Please do not visit or use the domain, as it is no longer under my control.
+
 [![CodeQL](https://github.com/AnalogCyan/itadakimasu/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AnalogCyan/itadakimasu/actions/workflows/codeql-analysis.yml)
 [![Codacy Grade](https://app.codacy.com/project/badge/Grade/e2074797518945bd9524cc444c402b28)](https://www.codacy.com/gh/AnalogCyan/itadakimasu/dashboard?utm_source=github.com&utm_medium=referral&utm_content=AnalogCyan/itadakimasu&utm_campaign=Badge_Grade)
 [![DeepSource Issues](https://deepsource.io/gh/AnalogCyan/itadakimasu.svg/?label=active+issues&show_trend=true&token=RioSb7HNxccrE4xMqQO7Jp_i)](https://deepsource.io/gh/AnalogCyan/itadakimasu/?ref=repository-badge)
 
 Itadakimasu is a fun recipe password generator, based on the concept from the [Random but Memorable](https://randombutmemorable.simplecast.com/episodes/nice-security-hollywood-terror-VPL7w0_R) podcast. The generator creates unique, easy-to-remember passwords that double as questionable-quality recipes.
-
-The app is available as an installable Progressive Web App (PWA), on the Google Play Store, and the Microsoft Store.
-
-[![PWA Badge](./Assets/pwa-badge.png)](https://itadakimasu.app)
-[![Google Play Store Badge](./Assets/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.itadakimasu.twa)
-[![Microsoft Store Badge](./Assets/microsoft-store-badge.png)](https://install.itadakimasu.app/windows/)
 
 ## Disclaimer
 
